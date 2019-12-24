@@ -8,5 +8,5 @@
 
 import Foundation
 
+var s, d : Vertex<Int, Int>
 print("Hello, World!")
-
