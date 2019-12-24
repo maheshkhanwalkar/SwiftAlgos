@@ -8,16 +8,28 @@
 
 import Foundation
 
-var pq = PriorityQueue<Int>()
+var graph = Graph<Int, Int>()
 
-for i in (0..<10).reversed() {
-    pq.add(elem: i)
+for i in 0..<4 {
+    graph.addVertex(i)
 }
 
-pq.add(elem: 4)
-pq.add(elem: 5)
-pq.add(elem: 6)
+let _ = graph.addEdge(from: 0, to: 1, weight: 6)
+let _ = graph.addEdge(from: 1, to: 0, weight: 6)
+let _ = graph.addEdge(from: 0, to: 2, weight: 4)
+let _ = graph.addEdge(from: 2, to: 0, weight: 4)
+let _ = graph.addEdge(from: 2, to: 3, weight: 2)
+let _ = graph.addEdge(from: 3, to: 2, weight: 2)
+let _ = graph.addEdge(from: 1, to: 3, weight: 14)
+let _ = graph.addEdge(from: 3, to: 1, weight: 14)
 
-while !pq.isEmpty() {
-    print(pq.remove()!)
+let mst = kruskal(graph: graph)
+var sum = 0
+
+for elem in mst.getVertices() {
+    for next in mst.outgoing(from: elem) {
+        sum += mst.weight(from: elem, to: next)!
+    }
 }
+
+print(sum / 2)

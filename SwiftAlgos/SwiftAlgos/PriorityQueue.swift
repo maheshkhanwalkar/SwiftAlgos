@@ -16,6 +16,12 @@ struct PriorityQueue<T: Comparable> {
         swim(start: queue.count - 1)
     }
 
+    mutating func add(items: [T]) {
+        for elem in items {
+            add(elem: elem)
+        }
+    }
+
     func peek() -> T? {
         if queue.count < 2 {
             return nil
