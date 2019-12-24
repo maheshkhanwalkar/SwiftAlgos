@@ -8,5 +8,15 @@
 
 import Foundation
 
-var s, d : Vertex<Int, Int>
-print("Hello, World!")
+var g = Graph<Int, Int>()
+
+g.addVertex(0)
+g.addVertex(1)
+
+let _ = g.addEdge(from: 0, to: 1)
+
+let bad = g.addEdge(from: 2, to: 3)
+print(bad)
+
+let good = g.hasEdge(from: 0, to: 1)
+print(good)

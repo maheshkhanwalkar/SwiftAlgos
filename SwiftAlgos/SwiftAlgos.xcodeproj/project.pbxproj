@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DC31CFF23B25325009E2EB8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31CFE23B25325009E2EB8 /* main.swift */; };
-		3DC31D0723B253C9009E2EB8 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0623B253C9009E2EB8 /* Vertex.swift */; };
+		3DC31D0923B25A77009E2EB8 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0823B25A77009E2EB8 /* Graph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		3DC31CFB23B25325009E2EB8 /* SwiftAlgos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgos; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC31CFE23B25325009E2EB8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		3DC31D0623B253C9009E2EB8 /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		3DC31D0823B25A77009E2EB8 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 		3DC31D0523B253AF009E2EB8 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				3DC31D0623B253C9009E2EB8 /* Vertex.swift */,
+				3DC31D0823B25A77009E2EB8 /* Graph.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -131,8 +131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC31D0923B25A77009E2EB8 /* Graph.swift in Sources */,
 				3DC31CFF23B25325009E2EB8 /* main.swift in Sources */,
-				3DC31D0723B253C9009E2EB8 /* Vertex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
