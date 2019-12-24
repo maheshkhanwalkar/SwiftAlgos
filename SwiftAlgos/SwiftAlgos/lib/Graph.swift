@@ -34,13 +34,50 @@ struct Graph<K: Hashable, W> {
         return true
     }
 
+    // Check whether there is an edge: from -> to
     func hasEdge(from: K, to: K) -> Bool {
+        return getEdge(from, to) != nil
+    }
+
+    // Get the weight of the edge: from -> to
+    func weight(from: K, to: K) -> W? {
+        guard let edge = getEdge(from, to) else {
+            return nil
+        }
+
+        return edge.1
+    }
+
+    // Get a list of all outgoing vertices
+    func outgoing(from: K) -> [K] {
         guard let src = map[from] else {
-            return false
+            return []
         }
 
         guard let list = adj[src] else {
-            return false
+            return []
+        }
+
+        var res: [K] = []
+
+        for pair in list {
+            res.append(pair.0)
+        }
+
+        return res
+    }
+}
+
+extension Graph {
+
+    // Get the underlying edge tuple
+    private func getEdge(_ from: K, _ to: K) -> (K, W?)? {
+        guard let src = map[from] else {
+            return nil
+        }
+
+        guard let list = adj[src] else {
+            return nil
         }
 
         // try to find a matching vertex
@@ -48,10 +85,10 @@ struct Graph<K: Hashable, W> {
             let vtx = pair.0
 
             if(vtx == to) {
-                return true
+                return pair
             }
         }
 
-        return false
+        return nil
     }
 }
