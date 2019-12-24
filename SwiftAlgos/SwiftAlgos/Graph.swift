@@ -66,6 +66,16 @@ struct Graph<K: Hashable, W> {
 
         return res
     }
+
+    func getVertices() -> [K] {
+        var vList: [K] = []
+
+        for (key, _) in map {
+            vList.append(key)
+        }
+
+        return vList
+    }
 }
 
 extension Graph {
