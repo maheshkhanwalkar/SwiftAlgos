@@ -8,14 +8,16 @@
 
 import Foundation
 
-var ds = DisjointSet(size: 8)
+var pq = PriorityQueue<Int>()
 
-let _ = ds.union(0, 1)
-let _ = ds.union(2, 3)
-let _ = ds.union(4, 5)
-let _ = ds.union(6, 7)
-let _ = ds.union(0, 3)
-let _ = ds.union(4, 1)
+for i in (0..<10).reversed() {
+    pq.add(elem: i)
+}
 
-print(ds.sameSet(2, 5))
-print(ds.sameSet(6, 3))
+pq.add(elem: 4)
+pq.add(elem: 5)
+pq.add(elem: 6)
+
+while !pq.isEmpty() {
+    print(pq.remove()!)
+}
