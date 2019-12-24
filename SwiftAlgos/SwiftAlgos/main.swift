@@ -8,11 +8,14 @@
 
 import Foundation
 
-var ds = DisjointSet(size: 5)
+var ds = DisjointSet(size: 8)
 
 let _ = ds.union(0, 1)
-let _ = ds.union(1, 2)
 let _ = ds.union(2, 3)
+let _ = ds.union(4, 5)
+let _ = ds.union(6, 7)
+let _ = ds.union(0, 3)
+let _ = ds.union(4, 1)
 
-print(ds.sameSet(0, 3))
-print(ds.sameSet(4, 0))
+print(ds.sameSet(2, 5))
+print(ds.sameSet(6, 3))

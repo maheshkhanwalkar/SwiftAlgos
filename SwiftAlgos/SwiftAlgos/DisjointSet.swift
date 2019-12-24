@@ -24,7 +24,7 @@ struct DisjointSet {
         }
     }
 
-    func sameSet(_ first: Int, _ second: Int) -> Bool {
+    mutating func sameSet(_ first: Int, _ second: Int) -> Bool {
         let fid = id(first)
         let sid = id(second)
 
@@ -56,16 +56,20 @@ struct DisjointSet {
 }
 
 extension DisjointSet {
-    private func id(_ pos: Int) -> Int? {
+    private mutating func id(_ pos: Int) -> Int? {
         // out of bounds
         if pos >= elems.count {
             return nil
         }
 
-        var ip = elems[pos]
+        var ip = pos
 
+        // compress path while traversing
         while(ip != elems[ip]) {
-            ip = elems[ip]
+            let flat = elems[elems[ip]]
+            elems[ip] = flat
+
+            ip = flat
         }
 
         return ip
