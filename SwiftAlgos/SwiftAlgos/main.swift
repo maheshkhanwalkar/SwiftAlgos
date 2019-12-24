@@ -8,20 +8,11 @@
 
 import Foundation
 
-var g = Graph<Int, Int>()
+var ds = DisjointSet(size: 5)
 
-g.addVertex(0)
-g.addVertex(1)
-g.addVertex(2)
-g.addVertex(3)
+let _ = ds.union(0, 1)
+let _ = ds.union(1, 2)
+let _ = ds.union(2, 3)
 
-let _ = g.addEdge(from: 0, to: 1)
-let _ = g.addEdge(from: 0, to: 2)
-let _ = g.addEdge(from: 2, to: 3)
-
-let out = g.outgoing(from: 0)
-print(out)
-
-for vtx in out {
-    print("Weight: 0 -> \(vtx): \(g.weight(from: 0, to: vtx))")
-}
+print(ds.sameSet(0, 3))
+print(ds.sameSet(4, 0))
