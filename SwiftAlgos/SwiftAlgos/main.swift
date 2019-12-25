@@ -10,26 +10,24 @@ import Foundation
 
 var graph = Graph<Int, Int>()
 
-for i in 0..<4 {
+for i in 0..<7 {
     graph.addVertex(i)
 }
 
-let _ = graph.addEdge(from: 0, to: 1, weight: 6)
-let _ = graph.addEdge(from: 1, to: 0, weight: 6)
-let _ = graph.addEdge(from: 0, to: 2, weight: 4)
-let _ = graph.addEdge(from: 2, to: 0, weight: 4)
-let _ = graph.addEdge(from: 2, to: 3, weight: 2)
-let _ = graph.addEdge(from: 3, to: 2, weight: 2)
-let _ = graph.addEdge(from: 1, to: 3, weight: 14)
-let _ = graph.addEdge(from: 3, to: 1, weight: 14)
+let _ = graph.addEdge(from: 0, to: 1)
+let _ = graph.addEdge(from: 1, to: 0)
+let _ = graph.addEdge(from: 1, to: 2)
+let _ = graph.addEdge(from: 2, to: 1)
+let _ = graph.addEdge(from: 2, to: 3)
+let _ = graph.addEdge(from: 3, to: 2)
+let _ = graph.addEdge(from: 2, to: 4)
+let _ = graph.addEdge(from: 4, to: 2)
+let _ = graph.addEdge(from: 2, to: 5)
+let _ = graph.addEdge(from: 5, to: 2)
+let _ = graph.addEdge(from: 5, to: 4)
+let _ = graph.addEdge(from: 4, to: 5)
+let _ = graph.addEdge(from: 4, to: 6)
+let _ = graph.addEdge(from: 6, to: 4)
 
-let mst = kruskal(graph: graph)
-var sum = 0
-
-for elem in mst.getVertices() {
-    for next in mst.outgoing(from: elem) {
-        sum += mst.weight(from: elem, to: next)!
-    }
-}
-
-print(sum / 2)
+let res = dfs(graph: graph)
+print(res)

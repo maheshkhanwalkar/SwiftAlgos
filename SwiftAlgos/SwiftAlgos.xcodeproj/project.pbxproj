@@ -12,6 +12,7 @@
 		3DC31D0B23B2701B009E2EB8 /* Kruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0A23B2701B009E2EB8 /* Kruskal.swift */; };
 		3DC31D0D23B270A4009E2EB8 /* DisjointSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0C23B270A4009E2EB8 /* DisjointSet.swift */; };
 		3DC31D0F23B29E38009E2EB8 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */; };
+		3DC31D1123B2DAD7009E2EB8 /* Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		3DC31D0A23B2701B009E2EB8 /* Kruskal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kruskal.swift; sourceTree = "<group>"; };
 		3DC31D0C23B270A4009E2EB8 /* DisjointSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisjointSet.swift; sourceTree = "<group>"; };
 		3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traversal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3DC31D0A23B2701B009E2EB8 /* Kruskal.swift */,
 				3DC31D0C23B270A4009E2EB8 /* DisjointSet.swift */,
 				3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */,
+				3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */,
 			);
 			path = SwiftAlgos;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			files = (
 				3DC31D0D23B270A4009E2EB8 /* DisjointSet.swift in Sources */,
 				3DC31D0B23B2701B009E2EB8 /* Kruskal.swift in Sources */,
+				3DC31D1123B2DAD7009E2EB8 /* Traversal.swift in Sources */,
 				3DC31D0F23B29E38009E2EB8 /* PriorityQueue.swift in Sources */,
 				3DC31D0923B25A77009E2EB8 /* Graph.swift in Sources */,
 				3DC31CFF23B25325009E2EB8 /* main.swift in Sources */,
