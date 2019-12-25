@@ -33,5 +33,13 @@ let dfsRes = dfs(graph: graph)
 let bfsRes = bfs(graph: graph)
 
 print(dfsRes)
-print()
 print(bfsRes)
+
+var list = LinkedList<Int>()
+
+for i in 0..<10 {
+    list.add(elem: i)
+}
+
+print(list.get(pos: 5)!)
+print(list.get(pos: 8)!)

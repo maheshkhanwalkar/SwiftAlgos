@@ -28,10 +28,37 @@ struct Graph<K: Hashable, W> {
         }
 
         var list = adj[src] ?? []
+
+        // don't allow duplicate (parallel) edges
+        for elem in list {
+            if elem.0 == to {
+                return false
+            }
+        }
+
         list.append((to, weight))
 
         adj[src] = list
         return true
+    }
+
+    mutating func removeEdge(from: K, to: K) -> Bool {
+        guard let src = map[from] else {
+            return false
+        }
+
+        var list = adj[src] ?? []
+
+        for i in 0..<list.count {
+            let elem = list[i]
+
+            if elem.0 == to {
+                list.remove(at: i)
+                return true
+            }
+        }
+
+        return false
     }
 
     // Check whether there is an edge: from -> to

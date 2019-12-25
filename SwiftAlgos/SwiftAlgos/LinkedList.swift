@@ -13,12 +13,15 @@ struct LinkedList<K> {
     private var head: ListNode<K>? = nil
     private var tail: ListNode<K>? = nil
 
+    private var size = 0
+
     func isEmpty() -> Bool {
         return head == nil
     }
 
     mutating func add(elem: K) {
         let link = ListNode<K>(elem: elem, next: nil)
+        size += 1
 
         if head == nil {
             head = link
@@ -46,6 +49,8 @@ struct LinkedList<K> {
         let next = head!.next
         let elem = head!.elem
 
+        size -= 1
+
         if next == nil {
             head = nil
             tail = nil
@@ -55,6 +60,22 @@ struct LinkedList<K> {
         }
 
         return elem
+    }
+
+    func get(pos: Int) -> K? {
+        if pos >= size {
+            return nil
+        }
+
+        var ptr = head!
+        var count = 0
+
+        while count < pos {
+            ptr = ptr.next!
+            count += 1
+        }
+
+        return ptr.elem
     }
 }
 
