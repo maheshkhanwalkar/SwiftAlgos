@@ -80,6 +80,26 @@ func cycle<K: Hashable, W: Comparable>(graph: Graph<K, W>, undirected: Bool) -> 
     return []
 }
 
+func reverse<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> Graph<K, W> {
+    var res = Graph<K, W>()
+
+    // all the vertices are the same in G^R
+    for vtx in graph.getVertices() {
+        res.addVertex(vtx)
+    }
+
+    // add the edges -- but switch 'from' and 'to' in G^R
+    for from in graph.getVertices() {
+        let toList = graph.outgoing(from: from)
+
+        for to in toList {
+            let weight = graph.weight(from: from, to: to)
+            let _ = res.addEdge(from: to, to: from, weight: weight)
+        }
+    }
+
+    return res
+}
 
 //---------------------------------------------------------------------------------------//
 
