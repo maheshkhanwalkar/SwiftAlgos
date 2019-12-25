@@ -29,5 +29,9 @@ let _ = graph.addEdge(from: 4, to: 5)
 let _ = graph.addEdge(from: 4, to: 6)
 let _ = graph.addEdge(from: 6, to: 4)
 
-let res = dfs(graph: graph)
-print(res)
+let dfsRes = dfs(graph: graph)
+let bfsRes = bfs(graph: graph)
+
+print(dfsRes)
+print()
+print(bfsRes)

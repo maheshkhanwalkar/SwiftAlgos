@@ -26,6 +26,37 @@ func dfs<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> [K] {
     return res
 }
 
+// Perform a Breadth First Search (BFS) on the given graph
+func bfs<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> [K] {
+    var visited = Set<K>()
+    var res: [K] = []
+
+    for elem in graph.getVertices() {
+        // already visited this vertex
+        if visited.contains(elem) {
+            continue
+        }
+
+        var queue = LinkedList<K>()
+        queue.add(elem: elem)
+
+        while !queue.isEmpty() {
+            let curr = queue.remove()!
+
+            if visited.contains(curr) {
+                continue
+            }
+
+            visited.insert(curr)
+            res.append(curr)
+
+            queue.addAll(items: graph.outgoing(from: curr))
+        }
+    }
+
+    return res
+}
+
 private func explore<K: Hashable, W: Comparable>(vertex: K, graph: Graph<K, W>,
           visited: inout Set<K>, res: inout [K])
 {
