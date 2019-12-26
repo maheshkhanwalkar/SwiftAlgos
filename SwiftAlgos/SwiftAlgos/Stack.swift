@@ -22,4 +22,8 @@ struct Stack<K> {
     func peek() -> K? {
         return list.get(pos: 0)
     }
+
+    func isEmpty() -> Bool {
+        return list.isEmpty()
+    }
 }

@@ -10,30 +10,17 @@ import Foundation
 
 var graph = Graph<Int, Int>()
 
-for i in 0..<7 {
+for i in 0..<5 {
     graph.addVertex(i)
 }
 
 let _ = graph.addEdge(from: 0, to: 1)
-let _ = graph.addEdge(from: 1, to: 0)
+let _ = graph.addEdge(from: 0, to: 2)
 let _ = graph.addEdge(from: 1, to: 2)
-let _ = graph.addEdge(from: 2, to: 1)
 let _ = graph.addEdge(from: 2, to: 3)
-let _ = graph.addEdge(from: 3, to: 2)
+let _ = graph.addEdge(from: 1, to: 3)
 let _ = graph.addEdge(from: 2, to: 4)
-let _ = graph.addEdge(from: 4, to: 2)
-let _ = graph.addEdge(from: 2, to: 5)
-let _ = graph.addEdge(from: 5, to: 2)
-let _ = graph.addEdge(from: 5, to: 4)
-let _ = graph.addEdge(from: 4, to: 5)
-let _ = graph.addEdge(from: 4, to: 6)
-let _ = graph.addEdge(from: 6, to: 4)
+let _ = graph.addEdge(from: 3, to: 4)
 
-let dfsRes = dfs(graph: graph)
-let bfsRes = bfs(graph: graph)
-
-print(dfsRes)
-print(bfsRes)
-
-let c = cycle(graph: graph, undirected: true)
-print(c)
+let res = toposort(graph: graph)
+print(res)

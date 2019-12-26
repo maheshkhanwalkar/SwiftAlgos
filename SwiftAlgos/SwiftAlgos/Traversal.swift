@@ -102,7 +102,24 @@ func reverse<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> Graph<K, W> {
 }
 
 func toposort<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> [K] {
-    return []
+    var visited = Set<K>()
+    var stack = Stack<K>()
+    var res: [K] = []
+
+    for elem in graph.getVertices() {
+        if visited.contains(elem) {
+            continue
+        }
+
+        topoExplore(vertex: elem, graph: graph, visited:
+            &visited, res: &stack)
+    }
+
+    while !stack.isEmpty() {
+        res.append(stack.pop()!)
+    }
+
+    return res
 }
 
 // Helper function to explore from a given vertex
@@ -165,4 +182,20 @@ private func cycleExplore<K: Hashable, W: Comparable>(parent: K?, vertex: K, gra
     }
 
     return []
+}
+
+private func topoExplore<K: Hashable, W: Comparable>(vertex: K, graph: Graph<K, W>,
+       visited: inout Set<K>, res: inout Stack<K>)
+{
+    if visited.contains(vertex) {
+        return
+    }
+
+    visited.insert(vertex)
+
+    for elem in graph.outgoing(from: vertex) {
+        topoExplore(vertex: elem, graph: graph, visited: &visited, res: &res)
+    }
+
+    res.push(elem: vertex)
 }
