@@ -101,8 +101,9 @@ func reverse<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> Graph<K, W> {
     return res
 }
 
-//---------------------------------------------------------------------------------------//
-
+func toposort<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> [K] {
+    return []
+}
 
 // Helper function to explore from a given vertex
 private func explore<K: Hashable, W: Comparable>(vertex: K, graph: Graph<K, W>,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0EC33E23B441CA005B0BBB /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0EC33D23B441CA005B0BBB /* Stack.swift */; };
 		3DC31CFF23B25325009E2EB8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31CFE23B25325009E2EB8 /* main.swift */; };
 		3DC31D0923B25A77009E2EB8 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0823B25A77009E2EB8 /* Graph.swift */; };
 		3DC31D0B23B2701B009E2EB8 /* Kruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0A23B2701B009E2EB8 /* Kruskal.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D0EC33D23B441CA005B0BBB /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		3DC31CFB23B25325009E2EB8 /* SwiftAlgos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgos; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC31CFE23B25325009E2EB8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3DC31D0823B25A77009E2EB8 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */,
 				3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */,
 				3DC31D1223B302E3009E2EB8 /* LinkedList.swift */,
+				3D0EC33D23B441CA005B0BBB /* Stack.swift */,
 			);
 			path = SwiftAlgos;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				3DC31D0B23B2701B009E2EB8 /* Kruskal.swift in Sources */,
 				3DC31D1123B2DAD7009E2EB8 /* Traversal.swift in Sources */,
 				3DC31D0F23B29E38009E2EB8 /* PriorityQueue.swift in Sources */,
+				3D0EC33E23B441CA005B0BBB /* Stack.swift in Sources */,
 				3DC31D0923B25A77009E2EB8 /* Graph.swift in Sources */,
 				3DC31CFF23B25325009E2EB8 /* main.swift in Sources */,
 				3DC31D1323B302E3009E2EB8 /* LinkedList.swift in Sources */,

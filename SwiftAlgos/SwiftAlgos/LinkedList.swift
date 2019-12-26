@@ -34,6 +34,17 @@ struct LinkedList<K> {
         tail = link
     }
 
+    mutating func addFront(elem: K) {
+        let link = ListNode<K>(elem: elem, next: head)
+
+        head = link
+        size += 1
+
+        if tail == nil {
+            tail = head
+        }
+    }
+
     mutating func addAll(items: [K]) {
         for item in items {
             add(elem: item)
