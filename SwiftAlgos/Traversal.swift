@@ -138,18 +138,26 @@ private func explore<K: Hashable, W: Comparable>(vertex: K, graph: Graph<K, W>,
 private func cycleExplore<K: Hashable, W: Comparable>(parent: K?, vertex: K, graph: Graph<K, W>,
             visited: inout Set<K>, trace: inout [K], all: inout [[K]], pos: Int, undirected: Bool)
 {
-    // found a cycle
+    // potentially found a cycle
     if visited.contains(vertex) {
         var res: [K] = [vertex]
+        var found: Bool = false
 
         for i in (0..<trace.count).reversed() {
             let curr = trace[i]
 
             if curr == vertex {
+                found = true
                 break
             }
 
             res.append(curr)
+        }
+
+        // part of a cycle -- but by itself, not a cycle
+        // therefore, disregard this false positive
+        if !found {
+            return
         }
 
         all.append(res)
