@@ -57,9 +57,10 @@ func bfs<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> [K] {
     return res
 }
 
-func cycle<K: Hashable, W: Comparable>(graph: Graph<K, W>, undirected: Bool) -> [K] {
+func cycle<K: Hashable, W: Comparable>(graph: Graph<K, W>, undirected: Bool) -> [[K]] {
     var visited = Set<K>()
     var trace: [K] = []
+    var all: [[K]] = []
 
     for elem in graph.getVertices() {
         // already seen this element in a previous DFS run
@@ -68,16 +69,11 @@ func cycle<K: Hashable, W: Comparable>(graph: Graph<K, W>, undirected: Bool) -> 
             continue
         }
 
-        let res = cycleExplore(parent: nil, vertex: elem,
-                graph: graph, visited: &visited, trace: &trace, pos: 0, undirected: undirected)
-
-        // found a cycle
-        if res.count > 0 {
-            return res
-        }
+        cycleExplore(parent: nil, vertex: elem,
+            graph: graph, visited: &visited, trace: &trace, all: &all, pos: 0, undirected: undirected)
     }
 
-    return []
+    return all
 }
 
 func reverse<K: Hashable, W: Comparable>(graph: Graph<K, W>) -> Graph<K, W> {
@@ -140,7 +136,7 @@ private func explore<K: Hashable, W: Comparable>(vertex: K, graph: Graph<K, W>,
 }
 
 private func cycleExplore<K: Hashable, W: Comparable>(parent: K?, vertex: K, graph: Graph<K, W>,
-       visited: inout Set<K>, trace: inout [K], pos: Int, undirected: Bool) -> [K]
+            visited: inout Set<K>, trace: inout [K], all: inout [[K]], pos: Int, undirected: Bool)
 {
     // found a cycle
     if visited.contains(vertex) {
@@ -156,7 +152,8 @@ private func cycleExplore<K: Hashable, W: Comparable>(parent: K?, vertex: K, gra
             res.append(curr)
         }
 
-        return res
+        all.append(res)
+        return
     }
 
     visited.insert(vertex)
@@ -168,20 +165,14 @@ private func cycleExplore<K: Hashable, W: Comparable>(parent: K?, vertex: K, gra
             continue
         }
 
-        let res = cycleExplore(parent: vertex, vertex: elem, graph: graph,
-              visited: &visited, trace: &trace, pos: trace.count, undirected: undirected)
-
-        if res.count > 0 {
-            return res
-        }
+        cycleExplore(parent: vertex, vertex: elem, graph: graph,
+              visited: &visited, trace: &trace, all: &all, pos: trace.count, undirected: undirected)
 
         // cleanup the trace
         for _ in (pos + 1..<trace.count).reversed() {
             trace.removeLast()
         }
     }
-
-    return []
 }
 
 private func topoExplore<K: Hashable, W: Comparable>(vertex: K, graph: Graph<K, W>,
