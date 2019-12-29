@@ -10,24 +10,25 @@ import Foundation
 
 func peasantMultiply(x: Int, y: Int) -> Int {
     var prod: Int = 0
-    var half, double: Int
+    var down, up: Int
 
     if x < y {
-        half = y
-        double = x
+        down = y
+        up = x
     }
     else {
-        half = x
-        double = y
+        down = x
+        up = y
     }
 
-    while half > 0 {
-        if half % 2 != 0 {
-            prod += double
+    while down > 0 {
+        // odd parity check
+        if down % 2 != 0 {
+            prod += up
         }
 
-        half = half / 2
-        double += double
+        down = down / 2
+        up += up
     }
 
     return prod
