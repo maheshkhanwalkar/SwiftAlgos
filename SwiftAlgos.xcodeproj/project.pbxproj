@@ -52,6 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D5C739623B9041300585606 /* Uncategorised */ = {
+			isa = PBXGroup;
+			children = (
+				3DC31D0A23B2701B009E2EB8 /* Kruskal.swift */,
+				3DC31D0C23B270A4009E2EB8 /* DisjointSet.swift */,
+				3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */,
+				3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */,
+				3DC31D1223B302E3009E2EB8 /* LinkedList.swift */,
+				3D0EC33D23B441CA005B0BBB /* Stack.swift */,
+				3DC31D0823B25A77009E2EB8 /* Graph.swift */,
+			);
+			path = Uncategorised;
+			sourceTree = "<group>";
+		};
 		3DC31CF223B25325009E2EB8 = {
 			isa = PBXGroup;
 			children = (
@@ -71,14 +85,8 @@
 		3DC31CFD23B25325009E2EB8 /* SwiftAlgos */ = {
 			isa = PBXGroup;
 			children = (
-				3DC31D0823B25A77009E2EB8 /* Graph.swift */,
+				3D5C739623B9041300585606 /* Uncategorised */,
 				3DC31CFE23B25325009E2EB8 /* main.swift */,
-				3DC31D0A23B2701B009E2EB8 /* Kruskal.swift */,
-				3DC31D0C23B270A4009E2EB8 /* DisjointSet.swift */,
-				3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */,
-				3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */,
-				3DC31D1223B302E3009E2EB8 /* LinkedList.swift */,
-				3D0EC33D23B441CA005B0BBB /* Stack.swift */,
 			);
 			path = SwiftAlgos;
 			sourceTree = "<group>";
