@@ -15,6 +15,7 @@
 		3DC31D0F23B29E38009E2EB8 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */; };
 		3DC31D1123B2DAD7009E2EB8 /* Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */; };
 		3DC31D1323B302E3009E2EB8 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC31D1223B302E3009E2EB8 /* LinkedList.swift */; };
+		3DD9412E23B93BB90095C872 /* Multiply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9412D23B93BB90095C872 /* Multiply.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		3DC31D0E23B29E38009E2EB8 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		3DC31D1023B2DAD7009E2EB8 /* Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traversal.swift; sourceTree = "<group>"; };
 		3DC31D1223B302E3009E2EB8 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		3DD9412D23B93BB90095C872 /* Multiply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiply.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +87,19 @@
 		3DC31CFD23B25325009E2EB8 /* SwiftAlgos */ = {
 			isa = PBXGroup;
 			children = (
+				3DD9412C23B93BA40095C872 /* Introduction */,
 				3D5C739623B9041300585606 /* Uncategorised */,
 				3DC31CFE23B25325009E2EB8 /* main.swift */,
 			);
 			path = SwiftAlgos;
+			sourceTree = "<group>";
+		};
+		3DD9412C23B93BA40095C872 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				3DD9412D23B93BB90095C872 /* Multiply.swift */,
+			);
+			path = Introduction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD9412E23B93BB90095C872 /* Multiply.swift in Sources */,
 				3DC31D0D23B270A4009E2EB8 /* DisjointSet.swift in Sources */,
 				3DC31D0B23B2701B009E2EB8 /* Kruskal.swift in Sources */,
 				3DC31D1123B2DAD7009E2EB8 /* Traversal.swift in Sources */,

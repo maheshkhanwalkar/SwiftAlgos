@@ -8,30 +8,12 @@
 
 import Foundation
 
-var graph = Graph<Int, Int>()
+func intro() {
+    let res = peasantMultiply(x: 914, y: 314)
+    let equiv = 914 * 314
 
-for i in 0..<7 {
-    graph.addVertex(i)
+    print(res)
+    print(equiv)
 }
 
-let _ = graph.addEdge(from: 0, to: 1)
-let _ = graph.addEdge(from: 1, to: 0)
-let _ = graph.addEdge(from: 1, to: 2)
-let _ = graph.addEdge(from: 2, to: 1)
-let _ = graph.addEdge(from: 2, to: 3)
-let _ = graph.addEdge(from: 3, to: 2)
-let _ = graph.addEdge(from: 2, to: 4)
-let _ = graph.addEdge(from: 4, to: 2)
-let _ = graph.addEdge(from: 2, to: 5)
-let _ = graph.addEdge(from: 5, to: 2)
-let _ = graph.addEdge(from: 5, to: 4)
-let _ = graph.addEdge(from: 4, to: 5)
-let _ = graph.addEdge(from: 4, to: 6)
-let _ = graph.addEdge(from: 6, to: 4)
-let _ = graph.addEdge(from: 0, to: 2)
-let _ = graph.addEdge(from: 2, to: 0)
-let _ = graph.addEdge(from: 3, to: 4)
-let _ = graph.addEdge(from: 4, to: 3)
-
-let c = cycle(graph: graph, undirected: true)
-print(c)
+intro()
