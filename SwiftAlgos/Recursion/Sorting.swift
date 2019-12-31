@@ -93,3 +93,25 @@ private func partition<T: Comparable>(left: Int, right: Int, input: inout [T]) -
     input.swapAt(right - 1, ptr)
     return ptr
 }
+
+func quickSelect<T: Comparable>(input: inout [T], k: Int) -> T {
+    return quickSelect(left: 0, right: input.count, input: &input, k: k)
+}
+
+private func quickSelect<T: Comparable>(left: Int, right: Int, input: inout [T], k: Int) -> T {
+    if right == left + 1 {
+        return input[left]
+    }
+
+    let pos = partition(left: left, right: right, input: &input)
+
+    if pos == k {
+        return input[pos]
+    }
+    else if pos > k {
+        return quickSelect(left: left, right: pos, input: &input, k: k)
+    }
+    else {
+        return quickSelect(left: pos + 1, right: right, input: &input, k: k)
+    }
+}

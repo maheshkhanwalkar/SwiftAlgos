@@ -24,6 +24,10 @@ func recursion() {
     var qSort = [8, 7, 6, 2, 4, 5, 1, 10, 9, 3]
     quickSort(input: &qSort)
     print(qSort)
+
+    var qs = [8, 5, 3, 2, 4, 1, 6, 7]
+    let median = quickSelect(input: &qs, k: qs.count / 2)
+    print(median)
 }
 
 intro()
