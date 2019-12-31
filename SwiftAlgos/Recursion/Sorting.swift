@@ -59,3 +59,32 @@ private func merge<T: Comparable>(left: Int, mid: Int, right: Int, input: inout 
         input[left + k] = copy[k]
     }
 }
+
+func quickSort<T: Comparable>(input: inout [T]) {
+    return quickSort(left: 0, right: input.count, input: &input)
+}
+
+private func quickSort<T: Comparable>(left: Int, right: Int, input: inout [T]) {
+    if left == right {
+        return
+    }
+
+    // partition the array
+    let mid = left + (right - left) / 2
+    input.swapAt(right - 1, mid)
+
+    var ptr = left
+
+    for i in left..<right - 1 {
+        if input[i] < input[right - 1] {
+            input.swapAt(ptr, i)
+            ptr += 1
+        }
+    }
+
+    input.swapAt(right - 1, ptr)
+
+    // sort the two halves
+    quickSort(left: left, right: ptr, input: &input)
+    quickSort(left: ptr + 1, right: right, input: &input)
+}

@@ -20,6 +20,10 @@ func recursion() {
     var mSort = [1, 10, 7, 3, 2, 8, 6, 5, 4, 9, 11, 12]
     mergeSort(input: &mSort)
     print(mSort)
+
+    var qSort = [8, 7, 6, 2, 4, 5, 1, 10, 9, 3]
+    quickSort(input: &qSort)
+    print(qSort)
 }
 
 intro()
