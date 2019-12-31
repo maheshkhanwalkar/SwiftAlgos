@@ -70,6 +70,14 @@ private func quickSort<T: Comparable>(left: Int, right: Int, input: inout [T]) {
     }
 
     // partition the array
+    let ptr = partition(left: left, right: right, input: &input)
+
+    // sort the two halves
+    quickSort(left: left, right: ptr, input: &input)
+    quickSort(left: ptr + 1, right: right, input: &input)
+}
+
+private func partition<T: Comparable>(left: Int, right: Int, input: inout [T]) -> Int {
     let mid = left + (right - left) / 2
     input.swapAt(right - 1, mid)
 
@@ -83,8 +91,5 @@ private func quickSort<T: Comparable>(left: Int, right: Int, input: inout [T]) {
     }
 
     input.swapAt(right - 1, ptr)
-
-    // sort the two halves
-    quickSort(left: left, right: ptr, input: &input)
-    quickSort(left: ptr + 1, right: right, input: &input)
+    return ptr
 }
