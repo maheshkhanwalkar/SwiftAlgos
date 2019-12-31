@@ -16,4 +16,11 @@ func intro() {
     print(equiv)
 }
 
+func recursion() {
+    var mSort = [1, 10, 7, 3, 2, 8, 6, 5, 4, 9, 11, 12]
+    mergeSort(input: &mSort)
+    print(mSort)
+}
+
 intro()
+recursion()
